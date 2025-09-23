@@ -158,42 +158,42 @@ class JsonTocsvConverter:
 
             
 
-if __name__=="__main__":
-    PrintFun()
-    while True:
-        number_transfer = input("Choose a number 🔢 : ")
+PrintFun()
+while True:
+    number_transfer = input("Choose a number 🔢 : ")
 
-        if number_transfer == '1' :
+    if number_transfer == '1' :
 
-            file_path = input("Enter the name of the file you want to convert with an extension 📁 :")
-            converter = JsonTocsvConverter(file_path)
+        file_path = input("Enter the name of the file you want to convert with an extension 📁 :")
+        converter = JsonTocsvConverter(file_path)
 
-            if converter.read_json():
-                csv_file_path = input("Enter the name of the new csv file (with .csv extension ) 📁 :")
+        if converter.read_json():
+            csv_file_path = input("Enter the name of the new csv file (with .csv extension ) 📁 :")
                 #التحقق من امتداد الملف 
-                if not csv_file_path.endswith('.csv'):
-                    csv_file_path += '.csv'
+            if not csv_file_path.endswith('.csv'):
+                csv_file_path += '.csv'
 
-                converter.convert_to_csv(csv_file_path)
-            break
+            converter.convert_to_csv(csv_file_path)
+        break
 
-        elif number_transfer == '2' :
+    elif number_transfer == '2' :
 
-            csv_file_path = input("Enter the name of the csv file to convert(with  extension ) 📁 :")
-            converter = JsonTocsvConverter(csv_file_path)
-            if converter.read_csv():
-                json_file_path = input("Enter the name of the new JSON file (without extension) 📁 :")
+        csv_file_path = input("Enter the name of the csv file to convert(with  extension ) 📁 :")
+        converter = JsonTocsvConverter(csv_file_path)
+        if converter.read_csv():
+            json_file_path = input("Enter the name of the new JSON file (without extension) 📁 :")
                 #التحقق من امتداد الملف 
-                if not json_file_path.endswith('.json'):
-                    json_file_path += '.json'
+            if not json_file_path.endswith('.json'):
+                json_file_path += '.json'
 
                   # استخدام نفس الاوبجكت لتحويل البيانات 
-                converter.convert_to_json(csv_file_path,json_file_path)
-            break
+            converter.convert_to_json(csv_file_path,json_file_path)
+        break
 
-        elif number_transfer == '3' :
-            print("Exit 💬.............")
-            break
-        else :
-            print(f"[{number_transfer}]:💢 invalid number.. ♻ ")
+    elif number_transfer == '3' :
+        print("Exit 💬.............")
+        break
+    else :
+        print(f"[{number_transfer}]:💢 invalid number.. ♻ ")
+
 
