@@ -180,7 +180,6 @@ if __name__=="__main__":
         elif number_transfer == '2' :
 
             csv_file_path = input("Enter the name of the csv file to convert(with  extension ) 📁 :")
-           # file_path = input("Enter the name of the new json file (with .json extension ) 📁 :")
             converter = JsonTocsvConverter(csv_file_path)
             if converter.read_csv():
                 json_file_path = input("Enter the name of the new JSON file (without extension) 📁 :")
@@ -197,3 +196,4 @@ if __name__=="__main__":
             break
         else :
             print(f"[{number_transfer}]:💢 invalid number.. ♻ ")
+
